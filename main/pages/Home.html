@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../../../2020_PortailNER_Agile/ressources/css/style.css">
+    <h1 style="font-size: 40px" align="center">
+        Portail des &#233;nergies renouvelables en VS
+    </h1>
+</head>
+<body>
+
+<!--AREA CHAR - PRODUCTION-->
+<div class="left">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages': ['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Year ?', 'Production', 'Puissance'],
+                ['2013', 400, 50],
+                ['2014', 500, 800],
+                ['2015', 900, 600],
+                ['2016', 800, 1200]
+            ]);
+
+            var options = {
+                title: 'Production [kWh]',
+                hAxis: {title: 'Year', titleTextStyle: {color: '#333'}},
+                vAxis: {minValue: 0}
+            };
+
+            var chart = new google.visualization.AreaChart(document.getElementById('chart_production'));
+            chart.draw(data, options);
+        }
+    </script>
+</div>
+
+<!--AREA CHAR - PUISSANCE-->
+<div class="right">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages': ['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Year ?', 'Production', 'Puissance'],
+                ['2013', 400, 50],
+                ['2014', 500, 800],
+                ['2015', 900, 600],
+                ['2016', 800, 1200]
+            ]);
+
+            var options = {
+                title: 'Puissance [kWh]',
+                hAxis: {title: 'Year', titleTextStyle: {color: '#333'}},
+                vAxis: {minValue: 0}
+            };
+
+            var chart = new google.visualization.AreaChart(document.getElementById('chart_puissance'));
+            chart.draw(data, options);
+        }
+    </script>
+</div>
+
+<!--PIE CHART-->
+<div>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages': ['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                ['Hydraulique au fil de l eau', 40],
+                ['Hydraulique a accumulation', 60]
+            ]);
+
+            var options = {
+                title: 'Energies renouvelables nouvelles'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart.draw(data, options);
+        }
+    </script>
+</div>
+
+<!--CHART CALLS-->
+<table class="columns" align="center">
+    <tr>
+        <td>
+            <div id="chart_production" style="width: 800px; height: 500px;"></div>
+        </td>
+        <td>
+            <div id="chart_puissance" style="width: 800px; height: 500px;"></div>
+        </td>
+    </tr>
+</table>
+<table class="columns" align="center">
+    <tr>
+        <td>
+            <div id="piechart" align="center" style="width: 900px; height: 500px;"></div>
+        </td>
+        <td>
+            <Navigation>
+                <figure >
+                    <img src="https://www.flaticon.com/svg/static/icons/svg/709/709486.svg"
+                         onclick="window.location.href = 'NER.html'" height="50em" width="50em" class="arrow"/>
+                    <figcaption>D&#233;tails NER</figcaption>
+                </figure>
+            </Navigation>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
